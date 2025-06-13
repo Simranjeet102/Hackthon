@@ -8,6 +8,9 @@ a557b13:src/VulnerableApi/Program.cs:generic-api-key:15
 # Ignore false positives from commit 64c2bbb
 64c2bbb:src/VulnerableApi/Program.cs:jwt-secret:8
 
+# Ignore false positives from commit 00f8191
+00f8191:src/VulnerableApi/Program.cs:jwt-secret:8
+
 # Ignore environment variable patterns
 **/appsettings.json:ConnectionStrings:DefaultConnection
 **/Program.cs:Environment.GetEnvironmentVariable
