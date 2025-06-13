@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+# Environment files
+.env
+.env.*
+!.env.example
