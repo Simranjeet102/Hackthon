@@ -12,7 +12,8 @@ id = "generic-api-key"
 description = "Generic API Key"
 regex = '''(?i)(api[_-]?key|apikey|secret)['"]?\s*[:=]\s*['"]?([a-zA-Z0-9\-_=]{8,64})['"]?'''
 tags = ["key", "API", "generic"]
-allowlist = [
+[rules.allowlist]
+regexes = [
     '''\${API_KEY}''',
     '''\${JWT_SECRET}''',
 ]
@@ -22,7 +23,8 @@ id = "connection-string"
 description = "Database Connection String"
 regex = '''(?i)(connection[_-]?string|connstring)['"]?\s*[:=]\s*['"]?([^'"]+)['"]?'''
 tags = ["database", "connection-string"]
-allowlist = [
+[rules.allowlist]
+regexes = [
     '''\${DB_.*}''',
 ]
 
@@ -31,7 +33,8 @@ id = "password"
 description = "Password in configuration"
 regex = '''(?i)(password|passwd|pwd)['"]?\s*[:=]\s*['"]?([^'"]+)['"]?'''
 tags = ["password", "credentials"]
-allowlist = [
+[rules.allowlist]
+regexes = [
     '''\${DB_PASSWORD}''',
     '''disabled-password''',
 ] 
