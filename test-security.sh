@@ -25,7 +25,7 @@ fi
 
 # Test 3: Verify environment variables
 echo "📝 Test 3: Checking environment variables..."
-required_vars=("DB_SERVER" "DB_NAME" "DB_USER" "DB_PASSWORD" "API_KEY")
+required_vars=("DB_SERVER" "DB_NAME" "DB_USER" "DB_PASSWORD" "API_KEY" "JWT_SECRET")
 missing_vars=0
 
 for var in "${required_vars[@]}"; do

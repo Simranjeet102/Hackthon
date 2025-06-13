@@ -4,14 +4,22 @@ using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ---- Intentional Security Risk ----
-// Hard‑coded secret. REMOVE ME!
-const string JwtSecret = "VerySecretKey123!"; 
+// Get JWT secret from environment variable
+var jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET") 
+    ?? throw new InvalidOperationException("JWT_SECRET environment variable is not set");
 
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.MapGet("/", () => new { status = "ok", secret = JwtSecret });
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.MapGet("/", () => new { status = "ok" });
 
 app.Run();

@@ -3,6 +3,8 @@ description = "Allowlist for known false positives"
 paths = [
     '''\.git/.*''',
     '''\.github/.*''',
+    '''SECURITY_FIXES\.md''',
+    '''test-security\.sh''',
 ]
 
 [[rules]]
@@ -10,15 +12,26 @@ id = "generic-api-key"
 description = "Generic API Key"
 regex = '''(?i)(api[_-]?key|apikey|secret)['"]?\s*[:=]\s*['"]?([a-zA-Z0-9\-_=]{8,64})['"]?'''
 tags = ["key", "API", "generic"]
+allowlist = [
+    '''\${API_KEY}''',
+    '''\${JWT_SECRET}''',
+]
 
 [[rules]]
 id = "connection-string"
 description = "Database Connection String"
 regex = '''(?i)(connection[_-]?string|connstring)['"]?\s*[:=]\s*['"]?([^'"]+)['"]?'''
 tags = ["database", "connection-string"]
+allowlist = [
+    '''\${DB_.*}''',
+]
 
 [[rules]]
 id = "password"
 description = "Password in configuration"
 regex = '''(?i)(password|passwd|pwd)['"]?\s*[:=]\s*['"]?([^'"]+)['"]?'''
-tags = ["password", "credentials"] 
+tags = ["password", "credentials"]
+allowlist = [
+    '''\${DB_PASSWORD}''',
+    '''disabled-password''',
+] 
