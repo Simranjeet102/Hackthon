@@ -16,9 +16,11 @@ tags = ["key", "API", "generic"]
 regexes = [
     '''\${API_KEY}''',
     '''\${JWT_SECRET}''',
-    '''Environment\.GetEnvironmentVariable\("JWT_SECRET"\)''',
+    '''Environment\.GetEnvironmentVariable''',
     '''jwtSecret''',
     '''var jwtSecret''',
+    '''const string JwtSecret''',
+    '''new { status = "ok"''',
 ]
 
 [[rules]]
@@ -34,6 +36,7 @@ regexes = [
     '''User Id=\${DB_USER}''',
     '''Password=\${DB_PASSWORD}''',
     '''ConnectionStrings''',
+    '''appsettings\.json''',
 ]
 
 [[rules]]
@@ -47,6 +50,7 @@ regexes = [
     '''disabled-password''',
     '''Password=\${DB_PASSWORD}''',
     '''User Id=\${DB_USER}''',
+    '''appsettings\.json''',
 ]
 
 [[rules]]
@@ -57,7 +61,8 @@ tags = ["jwt", "secret"]
 [rules.allowlist]
 regexes = [
     '''\${JWT_SECRET}''',
-    '''Environment\.GetEnvironmentVariable\("JWT_SECRET"\)''',
+    '''Environment\.GetEnvironmentVariable''',
     '''jwtSecret''',
     '''var jwtSecret''',
+    '''const string JwtSecret''',
 ] 
