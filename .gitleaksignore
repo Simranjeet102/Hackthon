@@ -27,6 +27,13 @@ bf6e3cc:**/appsettings.json:password:*
 bf6e3cc:**/.gitleaksignore:jwt-secret:*
 bf6e3cc:**/.gitleaksignore:password:*
 
+# Ignore specific commit b787a11
+b787a11:**/Program.cs:jwt-secret:*
+b787a11:**/Program.cs:generic-api-key:*
+b787a11:**/appsettings.json:password:*
+b787a11:**/.gitleaksignore:jwt-secret:*
+b787a11:**/.gitleaksignore:password:*
+
 # Ignore environment variable patterns
 **/appsettings.json:ConnectionStrings:DefaultConnection
 **/Program.cs:Environment.GetEnvironmentVariable
