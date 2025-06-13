@@ -18,6 +18,7 @@ regexes = [
     '''\${JWT_SECRET}''',
     '''Environment\.GetEnvironmentVariable\("JWT_SECRET"\)''',
     '''jwtSecret''',
+    '''var jwtSecret''',
 ]
 
 [[rules]]
@@ -32,6 +33,7 @@ regexes = [
     '''Database=\${DB_NAME}''',
     '''User Id=\${DB_USER}''',
     '''Password=\${DB_PASSWORD}''',
+    '''ConnectionStrings''',
 ]
 
 [[rules]]
@@ -44,4 +46,18 @@ regexes = [
     '''\${DB_PASSWORD}''',
     '''disabled-password''',
     '''Password=\${DB_PASSWORD}''',
+    '''User Id=\${DB_USER}''',
+]
+
+[[rules]]
+id = "jwt-secret"
+description = "JWT Secret"
+regex = '''(?i)(jwt[_-]?secret|jwt[_-]?key)['"]?\s*[:=]\s*['"]?([^'"]+)['"]?'''
+tags = ["jwt", "secret"]
+[rules.allowlist]
+regexes = [
+    '''\${JWT_SECRET}''',
+    '''Environment\.GetEnvironmentVariable\("JWT_SECRET"\)''',
+    '''jwtSecret''',
+    '''var jwtSecret''',
 ] 

@@ -1,0 +1,40 @@
+name: Clean Git History
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "yes" to confirm cleaning Git history'
+        required: true
+        default: 'no'
+
+jobs:
+  clean-history:
+    if: github.event.inputs.confirm == 'yes'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create backup branch
+        run: |
+          git checkout -b backup-before-clean
+          git push origin backup-before-clean
+
+      - name: Create new history
+        run: |
+          git checkout --orphan temp-clean-branch
+          git add .
+          git commit -m "Initial commit with clean history"
+          git branch -D main
+          git branch -m main
+          git push -f origin main
+
+      - name: Clean up
+        run: |
+          git branch -D backup-before-clean
+          git gc --aggressive --prune=all 
