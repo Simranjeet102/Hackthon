@@ -25,6 +25,11 @@ a556465:src/VulnerableApi/appsettings.json:password:3
 afcb5b8:src/VulnerableApi/Program.cs:jwt-secret:8
 afcb5b8:src/VulnerableApi/Program.cs:jwt-secret:9
 
+# Ignore false positives from commit bbe0b5c
+bbe0b5c:.gitleaksignore:jwt-secret:8
+bbe0b5c:.gitleaksignore:jwt-secret:12
+bbe0b5c:.gitleaksignore:password:19
+
 # Ignore environment variable patterns
 **/appsettings.json:ConnectionStrings:DefaultConnection
 **/Program.cs:Environment.GetEnvironmentVariable
