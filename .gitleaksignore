@@ -30,6 +30,10 @@ bbe0b5c:.gitleaksignore:jwt-secret:8
 bbe0b5c:.gitleaksignore:jwt-secret:12
 bbe0b5c:.gitleaksignore:password:19
 
+# Ignore false positives from commit 8b2919d
+8b2919d:.gitleaksignore:password:31
+8b2919d:.gitleaksignore:jwt-secret:29
+
 # Ignore environment variable patterns
 **/appsettings.json:ConnectionStrings:DefaultConnection
 **/Program.cs:Environment.GetEnvironmentVariable
