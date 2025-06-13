@@ -12,6 +12,14 @@
 8627fbb:**/.gitleaksignore:jwt-secret:*
 8627fbb:**/.gitleaksignore:password:*
 
+# Ignore specific commit a272fb0
+a272fb0:**/Program.cs:jwt-secret:*
+a272fb0:**/Program.cs:generic-api-key:*
+a272fb0:**/appsettings.json:password:*
+a272fb0:**/.gitleaksignore:jwt-secret:*
+a272fb0:**/.gitleaksignore:password:*
+a272fb0e16409b80
+
 # Ignore environment variable patterns
 **/appsettings.json:ConnectionStrings:DefaultConnection
 **/Program.cs:Environment.GetEnvironmentVariable
