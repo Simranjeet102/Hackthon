@@ -21,6 +21,7 @@ regexes = [
     '''var jwtSecret''',
     '''const string JwtSecret''',
     '''new { status = "ok"''',
+    '''message = "This is a secure endpoint"''',
 ]
 
 [[rules]]
@@ -65,4 +66,5 @@ regexes = [
     '''jwtSecret''',
     '''var jwtSecret''',
     '''const string JwtSecret''',
+    '''InvalidOperationException\("JWT_SECRET environment variable is not set"\)''',
 ] 
