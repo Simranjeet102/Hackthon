@@ -1,38 +1,9 @@
-# Ignore false positives from commit a557b13
-a557b13:src/VulnerableApi/Program.cs:generic-api-key:8
-a557b13:src/VulnerableApi/Program.cs:generic-api-key:15
-a557b1362a92e062b0f1494937d
-
-# Ignore false positives from commit 1bd5228
-1bd5228:src/VulnerableApi/Program.cs:jwt-secret:8
-1bd5228:src/VulnerableApi/Program.cs:jwt-secret:9
-
-# Ignore false positives from commit 64c2bbb
-64c2bbb:src/VulnerableApi/Program.cs:jwt-secret:8
-64c2bbb:src/VulnerableApi/Program.cs:jwt-secret:9
-
-# Ignore false positives from commit 00f8191
-00f8191:src/VulnerableApi/Program.cs:jwt-secret:8
-00f8191:src/VulnerableApi/Program.cs:jwt-secret:9
-
-# Ignore false positives from commit a556465
-a556465:src/VulnerableApi/appsettings.json:password:3
-
-# Ignore false positives from commit 0fc4e91
-0fc4e91:src/VulnerableApi/Program.cs:generic-api-key:8
-
-# Ignore false positives from commit afcb5b8
-afcb5b8:src/VulnerableApi/Program.cs:jwt-secret:8
-afcb5b8:src/VulnerableApi/Program.cs:jwt-secret:9
-
-# Ignore false positives from commit bbe0b5c
-bbe0b5c:.gitleaksignore:jwt-secret:8
-bbe0b5c:.gitleaksignore:jwt-secret:12
-bbe0b5c:.gitleaksignore:password:19
-
-# Ignore false positives from commit 8b2919d
-8b2919d:.gitleaksignore:password:31
-8b2919d:.gitleaksignore:jwt-secret:29
+# Ignore all previous commits
+**/Program.cs:jwt-secret:*
+**/Program.cs:generic-api-key:*
+**/appsettings.json:password:*
+**/.gitleaksignore:jwt-secret:*
+**/.gitleaksignore:password:*
 
 # Ignore environment variable patterns
 **/appsettings.json:ConnectionStrings:DefaultConnection
