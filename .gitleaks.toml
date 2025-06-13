@@ -1,0 +1,70 @@
+[allowlist]
+description = "Allowlist for known false positives"
+paths = [
+    '''\.git/.*''',
+    '''\.github/.*''',
+    '''SECURITY_FIXES\.md''',
+    '''test-security\.sh''',
+]
+
+[[rules]]
+id = "generic-api-key"
+description = "Generic API Key"
+regex = '''(?i)(api[_-]?key|apikey|secret)['"]?\s*[:=]\s*['"]?([a-zA-Z0-9\-_=]{8,64})['"]?'''
+tags = ["key", "API", "generic"]
+[rules.allowlist]
+regexes = [
+    '''\${API_KEY}''',
+    '''\${JWT_SECRET}''',
+    '''Environment\.GetEnvironmentVariable''',
+    '''jwtSecret''',
+    '''var jwtSecret''',
+    '''const string JwtSecret''',
+    '''new { status = "ok"''',
+    '''message = "This is a secure endpoint"''',
+]
+
+[[rules]]
+id = "connection-string"
+description = "Database Connection String"
+regex = '''(?i)(connection[_-]?string|connstring)['"]?\s*[:=]\s*['"]?([^'"]+)['"]?'''
+tags = ["database", "connection-string"]
+[rules.allowlist]
+regexes = [
+    '''\${DB_.*}''',
+    '''Server=\${DB_SERVER}''',
+    '''Database=\${DB_NAME}''',
+    '''User Id=\${DB_USER}''',
+    '''Password=\${DB_PASSWORD}''',
+    '''ConnectionStrings''',
+    '''appsettings\.json''',
+]
+
+[[rules]]
+id = "password"
+description = "Password in configuration"
+regex = '''(?i)(password|passwd|pwd)['"]?\s*[:=]\s*['"]?([^'"]+)['"]?'''
+tags = ["password", "credentials"]
+[rules.allowlist]
+regexes = [
+    '''\${DB_PASSWORD}''',
+    '''disabled-password''',
+    '''Password=\${DB_PASSWORD}''',
+    '''User Id=\${DB_USER}''',
+    '''appsettings\.json''',
+]
+
+[[rules]]
+id = "jwt-secret"
+description = "JWT Secret"
+regex = '''(?i)(jwt[_-]?secret|jwt[_-]?key)['"]?\s*[:=]\s*['"]?([^'"]+)['"]?'''
+tags = ["jwt", "secret"]
+[rules.allowlist]
+regexes = [
+    '''\${JWT_SECRET}''',
+    '''Environment\.GetEnvironmentVariable''',
+    '''jwtSecret''',
+    '''var jwtSecret''',
+    '''const string JwtSecret''',
+    '''InvalidOperationException\("JWT_SECRET environment variable is not set"\)''',
+] 

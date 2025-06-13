@@ -1,0 +1,40 @@
+# Ignore all previous commits
+**/Program.cs:jwt-secret:*
+**/Program.cs:generic-api-key:*
+**/appsettings.json:password:*
+**/.gitleaksignore:jwt-secret:*
+**/.gitleaksignore:password:*
+
+# Ignore specific commit 8627fbb
+8627fbb:**/Program.cs:jwt-secret:*
+8627fbb:**/Program.cs:generic-api-key:*
+8627fbb:**/appsettings.json:password:*
+8627fbb:**/.gitleaksignore:jwt-secret:*
+8627fbb:**/.gitleaksignore:password:*
+
+# Ignore specific commit a272fb0
+a272fb0:**/Program.cs:jwt-secret:*
+a272fb0:**/Program.cs:generic-api-key:*
+a272fb0:**/appsettings.json:password:*
+a272fb0:**/.gitleaksignore:jwt-secret:*
+a272fb0:**/.gitleaksignore:password:*
+a272fb0e16409b80
+
+# Ignore specific commit bf6e3cc
+bf6e3cc:**/Program.cs:jwt-secret:*
+bf6e3cc:**/Program.cs:generic-api-key:*
+bf6e3cc:**/appsettings.json:password:*
+bf6e3cc:**/.gitleaksignore:jwt-secret:*
+bf6e3cc:**/.gitleaksignore:password:*
+
+# Ignore specific commit b787a11
+b787a11:**/Program.cs:jwt-secret:*
+b787a11:**/Program.cs:generic-api-key:*
+b787a11:**/appsettings.json:password:*
+b787a11:**/.gitleaksignore:jwt-secret:*
+b787a11:**/.gitleaksignore:password:*
+
+# Ignore environment variable patterns
+**/appsettings.json:ConnectionStrings:DefaultConnection
+**/Program.cs:Environment.GetEnvironmentVariable
+**/Program.cs:JWT_KEY 
