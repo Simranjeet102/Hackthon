@@ -40,7 +40,7 @@ if (app.Environment.IsDevelopment())
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => new { status = "ok", message = "API is running" });
 
 app.MapGet("/secure", () => new { status = "ok", message = "This is a secure endpoint" })
     .RequireAuthorization();
